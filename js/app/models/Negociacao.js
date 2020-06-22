@@ -8,7 +8,7 @@ class Negociacao{
     }
 
     // trabalhando com get
-    // acessa como 
+    // acessa como propriedade
     // não precisa do ()
     get data(){
         return this._data;
