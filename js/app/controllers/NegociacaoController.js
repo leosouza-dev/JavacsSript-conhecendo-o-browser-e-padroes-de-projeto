@@ -14,8 +14,9 @@ class NegociacaoController{
         event.preventDefault();
 
         // converter a string em um array e passar para variavel data
-        let data = new Date(this._inputData.value.split('-'))
-        // let data = new Date(this._inputData.value.replace(/-/g, ',')); opcao usando regex
+        // spread operator - desmembra o array - com isso teremos 3 parametros para obj date
+        // nesse caso, precisamos decrementar o mes de 1
+        let data = new Date(...this._inputData.value.split('-'));
 
         let negociacao = new Negociacao(
             data, // passando a data convertida
