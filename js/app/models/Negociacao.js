@@ -11,11 +11,11 @@ class Negociacao{
         Object.freeze(this);
     }
 
-    // trabalhando com get
-    // acessa como propriedade
-    // não precisa do ()
+    // programacao defensiva - evitar alterar prop. do objeto data
     get data(){
-        return this._data;
+        // passamos um novo objeto
+        // se alguerm tentar alterar, altera a copia e não a propriedade
+        return new Date(this._data.getTime());
     }
 
     get quantidade(){
