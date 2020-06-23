@@ -18,9 +18,7 @@ class NegociacaoController{
         // nesse caso, precisamos decrementar o mes de 1
         // Para resolver, uso o map - ele percorre meu array e no mes (indice = 1) eu reduzo em 1
         // apos isso, o spread acontece, desemenbrando com o mes convertido
-        let data = new Date(...this._inputData.value.split('-').map(function(item, indice) {
-            return item - indice % 2; // so subtrai quando estiver no indice 1
-        }));
+        let data = new Date(...this._inputData.value.split('-').map((item, indice) => item - indice % 2)); // arrow function
 
         let negociacao = new Negociacao(
             data, // passando a data convertida
