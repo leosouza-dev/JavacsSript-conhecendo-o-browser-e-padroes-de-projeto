@@ -13,14 +13,18 @@ class NegociacaoController{
     adiciona(event){
         event.preventDefault();
 
+        // converter a string em um array e passar para variavel data
+        let data = new Date(this._inputData.value.split('-'))
+        // let data = new Date(this._inputData.value.replace(/-/g, ',')); opcao usando regex
+
         let negociacao = new Negociacao(
-            this._inputData.value, // erro por vem como string, temos que converter para date
+            data, // passando a data convertida
             this._inputQuantidade.value, 
             this._inputValor.value
         );
 
         console.log(negociacao);
 
-        // add negociacao em uma lista
+        // todo - add negociacao em uma lista
     }
 }
