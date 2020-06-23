@@ -13,16 +13,13 @@ class NegociacaoController{
     adiciona(event){
         event.preventDefault();
 
-        // converter a string em um array e passar para variavel data
+        // converter a string em um array (split) e passar para variavel data
         // spread operator - desmembra o array - com isso teremos 3 parametros para obj date
         // nesse caso, precisamos decrementar o mes de 1
         // Para resolver, uso o map - ele percorre meu array e no mes (indice = 1) eu reduzo em 1
         // apos isso, o spread acontece, desemenbrando com o mes convertido
         let data = new Date(...this._inputData.value.split('-').map(function(item, indice) {
-            if(indice == 1){
-                return item - 1;
-            }
-            return item;
+            return item - indice % 2; // so subtrai quando estiver no indice 1
         }));
 
         let negociacao = new Negociacao(
