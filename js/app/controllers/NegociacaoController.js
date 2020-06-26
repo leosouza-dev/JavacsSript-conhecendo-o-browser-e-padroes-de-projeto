@@ -26,7 +26,12 @@ class NegociacaoController{
             this._inputValor.value
         );
 
-        console.log(negociacao);
+        console.log(negociacao.data);
+
+        let diaMesAno = negociacao.data.getDate() + '/' + (negociacao.data.getMonth() + 1) + '/' + negociacao.data.getFullYear(); 
+
+        console.log(diaMesAno);
+        
 
         // todo - add negociacao em uma lista
     }
