@@ -9,6 +9,8 @@ class ListaNegociacoes {
     }
 
     get negociacoes(){
-        return this._negociacoes;
+        // progr. defensiva - devolve um novo array com o valor igual a lista
+        // se tentar dar um push, ou qualquer coisa, altera essa copia e nao a prop.
+        return [].concat(this._negociacoes);
     }
 }
